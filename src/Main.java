@@ -15,9 +15,11 @@ public class Main {
 //        int a= customList.pop();
 //        System.out.println(a);
 //        System.out.println(customList);
+                customList.remove(8);
+        System.out.println(customList);
 //        customList.removeAll(3);
 //        System.out.println(customList);
-        customList.removeByIndex(2);
-        System.out.println(customList);
+//        customList.removeByIndex(2);
+//        System.out.println(customList);
     }
 }

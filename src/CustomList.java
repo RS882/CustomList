@@ -73,10 +73,7 @@ public class CustomList {
 
     public void remove(int elem) {
         int index = indexOf(elem);
-        if (index != -1) {
-            shiftByIndex(index);
-            this.pop();
-        }
+        removeByIndex(index);
 
     }
 
@@ -88,11 +85,7 @@ public class CustomList {
 
     public void removeRight(int elem) {
         int index = lastIndexOf(elem);
-        if (index != -1) {
-            shiftByIndex(index);
-            this.pop();
-        }
-
+        removeByIndex(index);
     }
 
     public void removeAll(int elem) {
