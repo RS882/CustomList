@@ -73,36 +73,62 @@ public class CustomList {
 
     public void remove(int elem) {
         int index = indexOf(elem);
-        if(index !=-1 ) {
+        if (index != -1) {
             shiftByIndex(index);
             this.pop();
         }
 
     }
-    private void shiftByIndex(int index ){
+
+    private void shiftByIndex(int index) {
         for (int j = index; j < this.list.length - 1; j++) {
             this.list[j] = this.list[j + 1];
         }
     }
 
-    public void removeRight (int elem){
+    public void removeRight(int elem) {
         int index = lastIndexOf(elem);
-        if(index !=-1 ) {
+        if (index != -1) {
             shiftByIndex(index);
             this.pop();
         }
 
     }
 
-    public  void removeAll(int elem){
-        int i=0;
-        while (i < this.list.length){
+    public void removeAll(int elem) {
+        int i = 0;
+        while (i < this.list.length) {
             if (this.list[i] == elem) {
                 shiftByIndex(i);
                 this.pop();
-            }else i++;
+            } else i++;
         }
 
     }
 
+    public void removeByIndex(int index) {
+        if (index >= 0 && index < this.list.length) {
+            shiftByIndex(index);
+            this.pop();
+        }
+    }
+
 }
+//Задание 1: Реализация метода removeByIndex для удаления элемента по индексу в пользовательском списке.
+//
+//        Описание задания: Вам необходимо разработать метод removeByIndex для
+//        пользовательского списка (CustomList), который будет осуществлять удаление
+//        элемента по указанному индексу.
+//
+//        Убедитесь, что метод обрабатывает ситуации с корректными и некорректными
+//        индексами, а также что он корректно сдвигает и обновляет элементы списка после удаления.
+//
+//        Задание 2: Реализация метода removeAllByIndex для удаления всех элементов по индексу
+//        в пользовательском списке.
+//
+//        Описание задания: Вам необходимо разработать метод removeAllByIndex для пользовательского
+//        списка (CustomList), который будет осуществлять удаление всех элементов по указанному индексу.
+//        Метод по указанному индексу находит значение и удаляет все вхождения данного значения.
+//
+//        Убедитесь, что метод обрабатывает ситуации с корректными и некорректными индексами, а также
+//        что он корректно сортирует и обновляет элементы списка после удаления.
