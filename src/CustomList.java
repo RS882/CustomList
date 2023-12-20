@@ -115,9 +115,7 @@ public class CustomList {
     public void reverse() {
 
         for (int i = 0; i < this.list.length / 2; i++) {
-            int elem = this.list[i];
-            this.list[i] = this.list[this.list.length - 1 - i];
-            this.list[this.list.length - 1 - i] = elem;
+            swap(i,this.list.length - 1 - i);
         }
 
     }
@@ -127,9 +125,7 @@ public class CustomList {
             for (int j = 0; j < this.list.length - i - 1; j++) {
 
                 if (this.list[j] > this.list[j + 1]) {
-                    int temp = this.list[j];
-                    this.list[j] = this.list[j + 1];
-                    this.list[j + 1] = temp;
+                    swap(j, j+1);
                 }
             }
         }
@@ -146,11 +142,16 @@ public class CustomList {
                     inMax = j;
                 }
             }
-            int temp = this.list[this.list.length - i - 1];
-            this.list[this.list.length - i - 1] = max;
-            this.list[inMax] = temp;
+            swap(inMax, this.list.length - i - 1 );
+
         }
 
+    }
+
+    private void swap ( int index1, int index2){
+        int temp = this.list[index1];
+        this.list[index1] = this.list[index2];
+        this.list[index2] = temp;
     }
 }
 //    Доделать метод selectionSort Реализовать замену местами максимального элемента и

@@ -19,9 +19,13 @@ public class Main {
 //        System.out.println(customList);
 //        customList.removeAll(3);
 //        System.out.println(customList);
-        customList.selectionSort();
-System.out.println(customList);
+//        customList.selectionSort();
+//System.out.println(customList);
 //        customList.removeByIndex(2);
+//        System.out.println(customList);
+//        customList.bubleSort();
+//        System.out.println(customList);
+//        customList.reverse();
 //        System.out.println(customList);
     }
 }
