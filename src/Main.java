@@ -5,9 +5,9 @@ public class Main {
 
         CustomList customList =new CustomList(new int[]{8,2,6,3,1,7,11,5});
 
-        customList.bubleSort(true);
-        System.out.println(customList);
-//        customList.reverse();
+//        customList.bubleSort(true);
 //        System.out.println(customList);
+        customList.selectionSort(true);
+        System.out.println(customList);
     }
 }

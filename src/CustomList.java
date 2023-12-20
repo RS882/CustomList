@@ -159,6 +159,27 @@ public class CustomList {
        }
     }
 
+    public void selectionSort(boolean desc) {
+        // VARIANT 1 -проще написать)
+//        selectionSort();
+//        if(desc) reverse();
+        //---------------------
+        // VARIANT 2- более рационально на один for меньше
+
+        for (int i = 0; i < this.list.length; i++) {
+            int min = this.list[0];
+            int inMin = 0;
+
+            for (int j = 0; j < this.list.length - i; j++) {
+                if (min > this.list[j]) {
+                    min = this.list[j];
+                    inMin = j;
+                }
+            }
+            swap(inMin, this.list.length - i - 1);
+        }
+    }
+
     private void swap(int index1, int index2) {
         int temp = this.list[index1];
         this.list[index1] = this.list[index2];
