@@ -112,4 +112,57 @@ public class CustomList {
         }
     }
 
+    public void reverse() {
+
+        for (int i = 0; i < this.list.length / 2; i++) {
+            int elem = this.list[i];
+            this.list[i] = this.list[this.list.length - 1 - i];
+            this.list[this.list.length - 1 - i] = elem;
+        }
+
+    }
+
+    public void bubleSort() {
+        for (int i = 0; i < this.list.length; i++) {
+            for (int j = 0; j < this.list.length - i - 1; j++) {
+
+                if (this.list[j] > this.list[j + 1]) {
+                    int temp = this.list[j];
+                    this.list[j] = this.list[j + 1];
+                    this.list[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public void selectionSort() {
+        for (int i = 0; i < this.list.length; i++) {
+            int max = this.list[0];
+            int inMax = 0;
+
+            for (int j = 0; j < this.list.length - i; j++) {
+                if (max < this.list[j]) {
+                    max = this.list[j];
+                    inMax = j;
+                }
+            }
+            int temp = this.list[this.list.length - i - 1];
+            this.list[this.list.length - i - 1] = max;
+            this.list[inMax] = temp;
+        }
+
+    }
 }
+//    Доделать метод selectionSort Реализовать замену местами максимального элемента и
+//    последнего в обрабатываемом наборе.
+//
+//        Реализовать приватный метод swap Данный метод должен получить два целый
+//        числа в качестве аргументов и заменить местами значения с этими индексами в списке list.
+//
+//        Примените этот метод в методах сортировки и в методе reverse.
+//
+//        Перегрузить метод bubbleSort Данный метод должен получить булевый пргумент desc.
+//        Если true, то сортировка от большего к меньшему, если false, то от меньшего к большему
+//
+//        Перегрузить метод selectionSort Данный метод должен получить булевый пргумент desc.
+//        Если true, то сортировка от большего к меньшему, если false, то от меньшего к большему

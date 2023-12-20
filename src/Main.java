@@ -3,7 +3,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        CustomList customList =new CustomList(new int[]{1,2,3,3,3,8,7,3,11});
+        CustomList customList =new CustomList(new int[]{8,2,6,3,1,7,11,5});
 
 //        System.out.println(customList);
 //        System.out.println(customList.indexOf(-8));
@@ -19,8 +19,8 @@ public class Main {
 //        System.out.println(customList);
 //        customList.removeAll(3);
 //        System.out.println(customList);
-        customList.removeAllByIndex(1);
-        System.out.println(customList);
+        customList.selectionSort();
+System.out.println(customList);
 //        customList.removeByIndex(2);
 //        System.out.println(customList);
     }
