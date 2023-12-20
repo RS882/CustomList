@@ -115,7 +115,7 @@ public class CustomList {
     public void reverse() {
 
         for (int i = 0; i < this.list.length / 2; i++) {
-            swap(i,this.list.length - 1 - i);
+            swap(i, this.list.length - 1 - i);
         }
 
     }
@@ -123,12 +123,25 @@ public class CustomList {
     public void bubleSort() {
         for (int i = 0; i < this.list.length; i++) {
             for (int j = 0; j < this.list.length - i - 1; j++) {
+                if (this.list[j] > this.list[j + 1]) swap(j, j + 1);
 
-                if (this.list[j] > this.list[j + 1]) {
-                    swap(j, j+1);
-                }
             }
         }
+    }
+
+    public void bubleSort(boolean desc) {
+        // VARIANT 1 -проще написать)
+//        bubleSort();
+//        if(desc) reverse();
+        //---------------------
+        // VARIANT 2- более рационально на один for меньше
+        if (desc) {
+            for (int i = 0; i < this.list.length; i++) {
+                for (int j = 0; j < this.list.length - i - 1; j++) {
+                    if (this.list[j] < this.list[j + 1]) swap(j, j + 1);
+                }
+            }
+        } else bubleSort();
     }
 
     public void selectionSort() {
@@ -142,13 +155,11 @@ public class CustomList {
                     inMax = j;
                 }
             }
-            swap(inMax, this.list.length - i - 1 );
-
-        }
-
+            swap(inMax, this.list.length - i - 1);
+       }
     }
 
-    private void swap ( int index1, int index2){
+    private void swap(int index1, int index2) {
         int temp = this.list[index1];
         this.list[index1] = this.list[index2];
         this.list[index2] = temp;
